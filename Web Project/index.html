@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="title-box">
+    <h1>💰 Expense Management System</h1>
+</div>
+
+<button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <div class="balance-box">
+        <h2>Available Balance: ₹<span id="balance">0</span></h2>
+    </div>
+
+    <div class="summary">
+        <div class="income-box">
+            <h3>Income</h3>
+            <p>₹<span id="income">0</span></p>
+        </div>
+
+        <div class="expense-box">
+            <h3>Expense</h3>
+            <p>₹<span id="expense">0</span></p>
+        </div>
+    </div>
+
+    <h3>Add Transaction</h3>
+    <form id="form">
+
+    <input type="text" id="text" placeholder="Enter description" required>
+
+    <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+
+    <input type="number" id="amount" placeholder="Enter amount" required>
+
+    <input type="date" id="date" required>
+
+     <button type="submit">Add</button>
+</form>
+
+<button type="button" onclick="resetAll()" class="reset-btn">Reset All</button>
+
+    <div class="history-box">
+    <h3>History</h3>
+
+    <div class="history-container">
+
+        <div>
+            <h4 style="color:green;">Income</h4>
+            <ul id="incomeList"></ul>
+        </div>
+
+        <div>
+            <h4 style="color:red;">Expense</h4>
+            <ul id="expenseList"></ul>
+        </div>
+
+    </div>
+</div>
+
+   <div class="graph-box">
+     <h3 class="graph-title"> Graph</h3>
+     <canvas id="chart"></canvas>
+   </div>
+
+    <canvas id="chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+
